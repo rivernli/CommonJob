@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+  <CarPm>
+    <Customers> <!--分号相隔-->
+      Ericsson; 
+    </Customers>
+    <Select>
+      select rpm, PDESC as pdesc, date as occurr_date, veadate as compelet_date,VEVERI as resolution, DATEDIFF(d,VEDATE,VEADATE) as delay_date
+      from tblRPM_CARPMTable where CNAME = '{0}'
+    </Select>
+    <Insert>
+      Insert into sgp_customer_carpm
+      (rpm, customer, quality_concerns,occurred_date,resolved_date,resolution,impact_to_customer,create_date)
+      select '{0}', '{1}', '{2}','{3}','{4}','{5}','{6}',getdate()
+    </Insert>
+    <Update>
+      update sgp_customer_carpm set quality_concerns = '{0}', resolved_date = '{1}', resolution = '{2}', 
+      impact_to_customer = '{3}' where rpm = '{4}'
+    </Update>
+    <QueryCount>
+      select count(1) from sgp_customer_carpm where rpm = '{0}'
+    </QueryCount>
+  </CarPm>
+  <Period>
+    <Customer>
+      Ericsson;
+    </Customer>
+    <Delete>
+      delete from SGP_Customer_Forecast_Shipped where customer = '{0}'
+    </Delete>
+    <Insert>
+      insert into SGP_Customer_Forecast_Shipped(customer, year, month,forcast, sales,backlog, create_date)
+      select ISNULL(forecast.oem_name,ISNULL(pamount.oem_name,pbkamount.oem_name)) as oem_name,
+      ISNULL(forecast.year,ISNULL(pamount.year,pbkamount.year)) as year,
+      ISNULL(forecast.month,ISNULL(pamount.month,pbkamount.month)) as month,
+      forecast.forecast_amount,pamount.amount, pbkamount.bklog_amount, getdate() from
+      (select max(c.oem_name) as oem_name, c.year, c.month,
+      sum(c.forecast) as forecast_amount from
+      (select '{0}' as oem_name, (a.fiscal_period / 100) as year, (a.fiscal_period - (a.fiscal_period / 100) * 100) as month, a.fcst_amt_SumByPart as forecast
+      from mcnnt801.Multek_BI.dbo.gam_forecast a
+      left join mcnnt801.Multek_BI.dbo.GAM_OEM b on a.oem_id = b.OEMID
+      where b.CusOEM like '%{0}%') c
+      group by c.year, c.month) forecast full join
+      (select  max(a.OEM) as oem_name, b.FiscalYear as year, b.FiscalPeriod as month,sum(a.RevenueAmount) as amount
+      from mcnnt801.Multek_BI.dbo.DistributionReport_Daily_OEM a left join mcnnt801.Multek_BI.dbo.Calendar b on
+      a.Day = b.calenderDate where a.oem = '{0}' and a.Type = 'Outbound'
+      group by b.FiscalYear, b.FiscalPeriod) pamount on forecast.year=pamount.year and forecast.month = pamount.month
+      full join
+      (select max(a.OEM_NAME) as oem_name,b.FiscalYear as year, b.FiscalPeriod as month, sum(Bklog_Amt_US) as bklog_amount
+      from mcnnt801.Multek_BI.dbo.vMKT_backlog_cn_new a
+      left join mcnnt801.Multek_BI.dbo.Calendar b on a.Committed_Date = b.calenderDate
+      where a.OEM_NAME = '{0}'
+      group by b.FiscalYear, b.FiscalPeriod) pbkamount on forecast.year=pbkamount.year and forecast.month = pbkamount.month
+    </Insert>  
+  </Period>
+</Root>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sites>
+  
+  <site>
+    <siteCode>mcn802bi</siteCode>
+    <connectionConfig>db_mcn802bi</connectionConfig>
+    <reportMail>haisen.qiu@multek;</reportMail>
+    <infoMail>haisen.qiu@multek;</infoMail>
+  </site>
+
+</sites>

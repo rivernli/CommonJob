@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Custom360Job", "Custom360Job\Custom360Job.csproj", "{55545EA6-00BB-4AC1-8CC3-5417B7BED098}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobBase", "..\..\..\..\..\SCode\JobBase\JobBase.csproj", "{A9F7F2A0-F41D-4CCF-812B-EADAF5E7C78C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Custom360FromDbJob", "Custom360FromDbJob\Custom360FromDbJob.csproj", "{CB8DF126-538B-4C52-BA7F-745C8D016152}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs.flextronics.com:8080/tfs/enterprisecloudsolutions
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Custom360Job\\Custom360Job.csproj
+		SccProjectName1 = Custom360Job
+		SccLocalPath1 = Custom360Job
+		SccProjectUniqueName2 = ..\\..\\..\\..\\..\\SCode\\JobBase\\JobBase.csproj
+		SccProjectName2 = JobBase
+		SccLocalPath2 = ..\\..\\..\\..\\..\\SCode\\JobBase
+		SccProjectUniqueName3 = Custom360FromDbJob\\Custom360FromDbJob.csproj
+		SccProjectName3 = Custom360FromDbJob
+		SccLocalPath3 = Custom360FromDbJob
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		MSSQL|Any CPU = MSSQL|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Test|Any CPU = Test|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55545EA6-00BB-4AC1-8CC3-5417B7BED098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55545EA6-00BB-4AC1-8CC3-5417B7BED098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55545EA6-00BB-4AC1-8CC3-5417B7BED098}.MSSQL|Any CPU.ActiveCfg = Release|Any CPU
+		{55545EA6-00BB-4AC1-8CC3-5417B7BED098}.MSSQL|Any CPU.Build.0 = Release|Any CPU
+		{55545EA6-00BB-4AC1-8CC3-5417B7BED098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55545EA6-00BB-4AC1-8CC3-5417B7BED098}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55545EA6-00BB-4AC1-8CC3-5417B7BED098}.Test|Any CPU.ActiveCfg = Release|Any CPU
+		{55545EA6-00BB-4AC1-8CC3-5417B7BED098}.Test|Any CPU.Build.0 = Release|Any CPU
+		{A9F7F2A0-F41D-4CCF-812B-EADAF5E7C78C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9F7F2A0-F41D-4CCF-812B-EADAF5E7C78C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9F7F2A0-F41D-4CCF-812B-EADAF5E7C78C}.MSSQL|Any CPU.ActiveCfg = Release|Any CPU
+		{A9F7F2A0-F41D-4CCF-812B-EADAF5E7C78C}.MSSQL|Any CPU.Build.0 = Release|Any CPU
+		{A9F7F2A0-F41D-4CCF-812B-EADAF5E7C78C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9F7F2A0-F41D-4CCF-812B-EADAF5E7C78C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9F7F2A0-F41D-4CCF-812B-EADAF5E7C78C}.Test|Any CPU.ActiveCfg = Release|Any CPU
+		{A9F7F2A0-F41D-4CCF-812B-EADAF5E7C78C}.Test|Any CPU.Build.0 = Release|Any CPU
+		{CB8DF126-538B-4C52-BA7F-745C8D016152}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB8DF126-538B-4C52-BA7F-745C8D016152}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB8DF126-538B-4C52-BA7F-745C8D016152}.MSSQL|Any CPU.ActiveCfg = Release|Any CPU
+		{CB8DF126-538B-4C52-BA7F-745C8D016152}.MSSQL|Any CPU.Build.0 = Release|Any CPU
+		{CB8DF126-538B-4C52-BA7F-745C8D016152}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB8DF126-538B-4C52-BA7F-745C8D016152}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB8DF126-538B-4C52-BA7F-745C8D016152}.Test|Any CPU.ActiveCfg = Release|Any CPU
+		{CB8DF126-538B-4C52-BA7F-745C8D016152}.Test|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
